@@ -36,19 +36,16 @@ export default class MoviesPage extends Component {
   render() {
     console.log(this.state.shows);
     return (
-      <div>
+      <div className="search">
         <Search changeAdress={this.changeAdress} />
-        {this.state.shows.length > 1 ? (
-          <ul>
-            {this.state.shows.map((movie) => (
-              <li key={movie.id}>
-                <Link to={`${this.props.match.url}/${movie.id}`}> {movie.title || movie.name}</Link>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <h3>Nothing found for your request</h3>
-        )}
+        <ul>
+          {this.state.shows.map((movie) => (
+            <li key={movie.id}>
+              <Link to={`${this.props.match.url}/${movie.id}`}> {movie.title || movie.name}</Link>
+            </li>
+          ))}
+        </ul>
+        {/* <h3>Nothing found for your request</h3> */}
       </div>
     );
   }

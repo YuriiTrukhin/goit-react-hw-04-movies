@@ -18,22 +18,26 @@ export default class MovieDetailsPage extends Component {
     const response = await Axios.get(
       `https://api.themoviedb.org/3/movie/${this.props.match.params.movieId}?api_key=401d61f37c17d956a98039a1a0734109&language=en-US`
     );
-    this.setState({ page: response.data })
+    this.setState({ page: response.data });
   }
   render() {
     const { page } = this.state;
     return (
       <>
         {page && (
-          <div>
-            <Link to="/">Go back</Link>
+          <div className="main-card">
+            <div className="back">
+              <Link to="/">Go back</Link>
+            </div>
+
             <Card {...page} />
-            <div>
+            <div className="additional-information">
               <ul>
-                <li>
+              <p>Additional information</p>
+                <li className="cast">
                   <Link to={`${this.props.match.url}/cast`}>Cast</Link>
                 </li>
-                <li>
+                <li className="reviews">
                   <Link to={`${this.props.match.url}/reviews`}>Reviews</Link>
                 </li>
               </ul>
