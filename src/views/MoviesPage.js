@@ -4,12 +4,7 @@ import Search from "../components/Search/Search";
 import { Link } from "react-router-dom";
 import queryString from "query-string";
 
-// import PropTypes from 'prop-types'
-
 export default class MoviesPage extends Component {
-  // static propTypes = {
-  //   prop: PropTypes
-  // }
   state = {
     shows: [],
     query: "",

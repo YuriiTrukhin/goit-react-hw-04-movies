@@ -1,19 +1,12 @@
 import Axios from "axios";
 import React, { Component } from "react";
-import { Link, Route, BrowserRouter } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import Cast from "../components/Cast/Cast";
 import Reviews from "../components/Reviews/Reviews";
 import Card from "../components/Card/Card";
 import routes from "../routes";
 
-// import MoviesPage from "./MoviesPage";
-
-// import PropTypes from 'prop-types'
-
 export default class MovieDetailsPage extends Component {
-  // static propTypes = {
-  //   prop: PropTypes
-  // }
   state = {
     page: null,
   };

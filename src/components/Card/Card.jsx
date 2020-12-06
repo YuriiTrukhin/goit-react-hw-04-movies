@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Card.module.css";
 import PropTypes from "prop-types";
 
-const Card = ({ poster_path, id, title, release_date, genres, overview }) => {
+const Card = ({ poster_path, id, title, release_date, genres, overview, popularity }) => {
   const img = "https://rimatour.com/wp-content/uploads/2017/09/No-image-found.jpg";
   // eslint-disable-next-line no-lone-blocks
   {
@@ -10,10 +10,11 @@ const Card = ({ poster_path, id, title, release_date, genres, overview }) => {
   }
   return (
     <div key={id} className={styles.card}>
-      <img src={poster_path} className={styles.cardImg}/>
+      <img src={poster_path} className={styles.cardImg} />
       <h1 className={styles.title}>
         {title}(<span>{(release_date = new Date(release_date).getFullYear())}</span>)
       </h1>
+      <h2>Popularity: {popularity}</h2>
       <h2>Overview</h2>
       <p>{overview}</p>
       <h2>Genres</h2>
@@ -25,7 +26,6 @@ const Card = ({ poster_path, id, title, release_date, genres, overview }) => {
             </li>
           ))}
       </ul>
-     
     </div>
   );
 };
