@@ -10,7 +10,7 @@ const Card = ({ poster_path, id, title, release_date, genres, overview, populari
   }
   return (
     <div key={id} className={styles.card}>
-      <img src={poster_path} className={styles.cardImg} />
+      <img src={poster_path} className={styles.cardImg} alt="picture" />
       <h1 className={styles.title}>
         {title}(<span>{(release_date = new Date(release_date).getFullYear())}</span>)
       </h1>
